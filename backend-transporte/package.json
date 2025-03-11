@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/server.js",
+    "dev": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
@@ -15,7 +17,10 @@
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "pg": "^8.14.0",
-    "sequelize": "^6.37.6",
+    "sequelize": "^6.37.6"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9",
     "sequelize-cli": "^6.6.2"
   }
 }

@@ -4,22 +4,33 @@ const {
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Cotizacion extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
     static associate(models) {
-      // define association here
     }
   }
   Cotizacion.init({
-    origen: DataTypes.STRING,
-    destino: DataTypes.STRING,
-    precio: DataTypes.DECIMAL
-  }, {
-    sequelize,
-    modelName: 'Cotizacion',
-  });
+    origen: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    destino: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    precio: {
+      type: DataTypes.DECIMAL(10, 2),
+      allowNull: false,
+      validate: {
+        isDecimal: true,
+        min: 0,
+      },
+    },
+  },
+    {
+      sequelize,
+      modelName: 'Cotizacion',
+      tableName: 'cotizaciones', // Nombre real en la base de datos
+      timestamps: true, // Para tener `createdAt` y `updatedAt`
+    }
+  );
   return Cotizacion;
 };
