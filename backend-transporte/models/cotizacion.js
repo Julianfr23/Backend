@@ -28,8 +28,8 @@ module.exports = (sequelize, DataTypes) => {
     {
       sequelize,
       modelName: 'Cotizacion',
-      tableName: 'cotizaciones', // Nombre real en la base de datos
-      timestamps: true, // Para tener `createdAt` y `updatedAt`
+      tableName: 'cotizaciones', 
+      timestamps: true, 
     }
   );
   return Cotizacion;
