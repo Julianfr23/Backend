@@ -115,8 +115,6 @@ const createCotizacion = async (req, res) => {
  *               $ref: '#/components/schemas/Cotizacion'
  *       404:
  *         description: Cotización no encontrada
- *       500:
- *         description: Error interno del servidor
  */
 const getCotizacionPorId = async (req, res) => {
   try {
