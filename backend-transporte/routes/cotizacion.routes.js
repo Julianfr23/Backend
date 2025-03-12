@@ -1,8 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const { getAllCotizaciones, createCotizacion } = require('../controllers/cotizacion.controller');
+const cotizacionController = require('../controllers/cotizacion.controller');
 
-router.get('/cotizaciones', getAllCotizaciones);
-router.post('/cotizaciones', createCotizacion);
+router.get('/cotizaciones', cotizacionController.getAllCotizaciones);
+router.post('/cotizaciones', cotizacionController.createCotizacion);
+router.get('/cotizaciones/:id', cotizacionController.getCotizacionPorId);
+router.put('/cotizaciones/:id', cotizacionController.updateCotizacion);
 
 module.exports = router;
